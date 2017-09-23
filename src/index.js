@@ -1,16 +1,15 @@
 import _ from 'lodash';
-import './style.css';
-import Icon from './images/myicon.png';
+import printMe from './print.js';
+
 
 function component() {
     var element = document.createElement('div');
+    var btn = document.createElement('button');
     element.innerHTML = _.join(['hello', 'world'], ' ');
-
+    btn.innerHTML = '点击输出console';
+    btn.onclick = printMe;
+    element.appendChild(btn);
     element.classList.add('hello');
-    // 将图像添加到现有的div中
-    var myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
     return element;
 }
 
